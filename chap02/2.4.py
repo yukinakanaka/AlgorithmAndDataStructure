@@ -15,7 +15,9 @@
 # Decimal('0.3000000000000000166533453694')
 
 import math
+from typing import Final
 
+MAX_VALUE: Final[float] = 99999999999999
 
 class Point:
     x: int
@@ -25,13 +27,22 @@ class Point:
         self.x = x
         self.y = y
 
-
-def calc_dist(x1: float, y1: float, x2: float, y2: float):
-    return math.sqrt((x1-x2) ** 2 + (y1-y2) ** 2)
-
+def calc_dist(p1: Point, p2: Point):
+    return math.sqrt((p1.x-p2.x) ** 2 + (p1.y-p2.y) ** 2)
 
 if __name__ == "__main__":
-    p1: Point = Point(0, 0)
-    p2: Point = Point(3, 4)
+    point_list: list[Point] = []
+    point_list.append(Point(0, 0))
+    point_list.append(Point(3, 4))
+    point_list.append(Point(1, 1))
+    point_list.append(Point(10, 2))
 
-    print(str(calc_dist(p1.x, p1.y, p2.x, p2.y)))
+    min_distance: float = MAX_VALUE
+
+    for i in range(len(point_list)):
+        for j in range(i + 1, len(point_list)):
+            print("{},{}".format(str(i), str(j)))
+            if min_distance > calc_dist(point_list[i], point_list[j]):
+                min_distance = calc_dist(point_list[i], point_list[j])
+
+    print(min_distance)
