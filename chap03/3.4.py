@@ -1,3 +1,5 @@
+# 2重ループは、N^2
+# 10,000^2 = 10^8 以下であればあまり問題ない
 from typing import Final
 
 SET1: set[int] = {1, 4, 5}
