@@ -13,7 +13,8 @@ def log(f: typing.Callable) -> typing.Callable:
     def inner(*args, **kwargs):
         print("{} START.\targs: {}, kwargs: {}".format(f.__name__, args, kwargs))
         result = f(*args, **kwargs)
-        print("{} FINISH.\targs: {}, kwargs: {}, reulst: {:d}".format(f.__name__, args, kwargs, result))
+        print("{} FINISH.\targs: {}, kwargs: {}, reulst: {:d}".format(
+            f.__name__, args, kwargs, result))
         return result
 
     return inner
@@ -21,21 +22,23 @@ def log(f: typing.Callable) -> typing.Callable:
 
 @log
 def fibo(n: int, memo: list[int]) -> int:
-    if memo[n-1] is not None:
+    if memo[n] is not None:
         print(f"{n} already calc")
-        return memo[n-1]
+        return memo[n]
     if n == 1:
         memo[1] = 1
         return 1
     if n == 0:
         memo[0] = 0
         return 0
-    return fibo(n-1, memo) + fibo(n-2, memo)
+    result: int = fibo(n-1, memo) + fibo(n-2, memo)
+    memo[n] = result
+    return result
 
 
 if __name__ == '__main__':
-    n: int = 5
-    memo: list[typing.Optional[int]] = [None] * n
+    n: int = 3
+    memo: list[typing.Optional[int]] = [None] * (n+1)
 
     result: int = fibo(n, memo)
     print(f"Result: {result}")
