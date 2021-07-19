@@ -1,4 +1,6 @@
 from typing import Callable
+
+
 def log(f: Callable) -> Callable:
 
     def wrapped(*args, **kwargs):
