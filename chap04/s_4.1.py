@@ -24,7 +24,7 @@ def log(f: typing.Callable) -> typing.Callable:
 
 
 @log
-def tri(n: int, memo: list[typing.Optional[int]]) -> int:
+def tri(n: int, memo: list[int]) -> int:
     """トリボナッチ数列の関数
 
     Args:
