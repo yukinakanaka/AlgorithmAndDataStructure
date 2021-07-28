@@ -37,6 +37,7 @@ if __name__ == '__main__':
     pairs: list[Pair] = [Pair(0, 5), Pair(2, 4), Pair(4, 7), Pair(9, 10), Pair(5, 6), Pair(10, 15)]
     sorted_pairs = sort_pairs(pairs)
 
+    print("-------")
     for i in sorted_pairs:
         print(i)
 
