@@ -43,6 +43,15 @@ class LinkedList:
 
         return cur
 
+    def __str__(self) -> str:
+        result: str = ""
+        cur: Node = self.nil.next
+        while True:
+            result += f"{cur.value} "
+            cur = cur.next
+            if cur is None:
+                break
+        return result
 
 if __name__ == '__main__':
     one: Node = Node('one')

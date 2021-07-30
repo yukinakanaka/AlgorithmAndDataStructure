@@ -51,9 +51,20 @@ class BiLinkedList:
         # 削除はO(1)
         # x →　p → y
         # x → y
-        p.next.prev = p.prev
+        if p.next is not None:
+            p.next.prev = p.prev
         p.prev.next = p.next
 
+    def __str__(self) -> str:
+        result: str = "[ "
+        cur: Node = self.zero.next
+        while True:
+            result += f"{cur.value} "
+            cur = cur.next
+            if cur is None:
+                break
+        result += "]"
+        return result
 
 if __name__ == '__main__':
     one: Node = Node('one')
