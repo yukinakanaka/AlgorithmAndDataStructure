@@ -56,8 +56,11 @@ class BiLinkedList:
         p.prev.next = p.next
 
     def __str__(self) -> str:
-        result: str = "[ "
         cur: Node = self.zero.next
+        if cur is None:
+            return "[]"
+
+        result: str = "[ "
         while True:
             result += f"{cur.value} "
             cur = cur.next
