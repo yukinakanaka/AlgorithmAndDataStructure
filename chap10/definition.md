@@ -1,4 +1,4 @@
----
+## グラフ
 * vertex: 頂点
 * edge: 辺
 ---
@@ -41,3 +41,28 @@
     * 交通ネットワーク: 平面的であることが特徴。どの2辺も交差しないように平面上に描くことができるとき、Gを平面グラフ(planner graph)と呼ぶ
     * ゲームの局面遷移
     * タスクの依存関係
+
+---
+## 木
+* 木(tree): 無向グラフGが連結でサイクルを持たない物
+
+---
+* 葉leaf
+* 親parent
+* 子child
+* 兄弟sibling: 同一の親を持つ頂点どうし
+---
+* 部分木subtree
+* 子孫descendant
+---
+* 深さdepth
+* 高さheight
+---
+* 順序木ordered tree
+    * k分木k-ary tree: 全ての頂点に対して高々k個の子頂点しか持たないもの
+        * k=1は連結リスト
+        * k=2は2分木binary tree
+            * 二分ヒープ
+            * 二分探索木
+            * 強平衡二分木strongly balanced binary tree: 頂点数をNとして高さがO(logN)である
+                * 平衡にしなければ最大の高さはO(N-1)
