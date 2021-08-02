@@ -66,3 +66,8 @@
             * 二分探索木
             * 強平衡二分木strongly balanced binary tree: 頂点数をNとして高さがO(logN)である
                 * 平衡にしなければ最大の高さはO(N-1)
+---
+* 二分探索木(binary search tree)
+* 平衡二分探索木(self-bralancing binary search tree)
+    * 実現方法は、赤黒木、ABL木、B-木、スプレー木、treapなどがある
+    * 万能感ありそうだが、ヒープで事足りるときはヒープ（ヒープは検索が苦手）
