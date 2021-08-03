@@ -14,4 +14,5 @@ Union-Findはグループ分けを効率的に管理するデータ構造。適�
 Union-Findによっても解くことができる。
 
 ## グラフ関連
-unite(x, y)すると辺edge x-yができる
+* unite(x, y)すると辺edge x-yができる
+* 辺の削除は難しい
