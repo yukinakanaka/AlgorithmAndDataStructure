@@ -1,5 +1,6 @@
 # マージソート
 # in-placeではない
+# O(NlogN)
 from math import floor
 
 
