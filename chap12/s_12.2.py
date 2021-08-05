@@ -18,4 +18,6 @@ if __name__ == '__main__':
                 break
         else:
             continue
+        break
     print(f"{count}")
+    print(f"{sum}")
