@@ -1,6 +1,12 @@
 from typing import Final
 
-MAX: int = 100
+MAX: Final[int] = 100
+
+def list_change(a: list[int]) -> None:
+    print(f"2: {id(a)}")
+    emp: list[int] = []
+    a = emp # 仮引数の変更は元の変数（関数の外）には影響しない
+    print(f"3: {id(a)}")
 
 
 def bucket_sort(a: list[int]) -> None:
@@ -29,5 +35,9 @@ def bucket_sort(a: list[int]) -> None:
 
 if __name__ == '__main__':
     a: list[int] = [5, 3, 2, 5, 6, 7, 10, 4]
-    print(bucket_sort(a))
+    # print(bucket_sort(a))
 
+    print(f"1: {id(a)}")
+    list_change(a)
+    print(f"4: {id(a)}")
+    print("")
