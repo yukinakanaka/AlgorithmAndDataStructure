@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ヒープは検索には適していない
 from typing import Optional
 import math
@@ -77,11 +78,39 @@ def heap_sort(a: list[int]) -> list[int]:
     result: list[int] = [-1] * len(a)
     for i in range(len(a)):
         result[len(a) - i - 1] = heap.pop()
+=======
+# マージソート
+# in-placeではない
+# O(NlogN)
+from math import floor
+
+
+def merge_sort(a: list[int]) -> list[int]:
+    if len(a) == 1:
+        return a
+
+    mid: int = floor(len(a) / 2)
+    left: list[int] = merge_sort(a[:mid]) # in-placeではない
+    right: list[int] = merge_sort(a[mid:])
+    right.reverse()
+
+    left.extend(right)
+
+    result: list[int] = []
+    while len(left) > 0:
+        if left[0] < left[-1]:
+            result.append(left[0])
+            left = left[1:]
+        else:
+            result.append(left[-1])
+            left = left[:-1]
+>>>>>>> 663cc00b11c2adfb0889772ab5a0c6143ade9e63
 
     return result
 
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     # h: Heap = Heap()
     # h.push(5)
     # h.push(3)
@@ -97,3 +126,7 @@ if __name__ == '__main__':
     a: list[int] = [4, 6, 7, 3, 9, 2, 0]
 
     print(heap_sort(a))
+=======
+    a: list = [3, 4, 5, 2, 1]
+    print(merge_sort(a))
+>>>>>>> 663cc00b11c2adfb0889772ab5a0c6143ade9e63
